@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
+int main()
+{
+    optimize();
+    long long t;
+    cin>>t;
+    while(t--)
+    {
+        long long a,b,n,k,mn;
+        cin>>a>>b>>n>>k;
+ 
+        mn = min(a,b);
+        long long ans;
+ 
+        long long x = (n/(k+1));
+        long long y = (x*k*a);
+ 
+        if(n-(x*(k+1))>0)
+        {
+            y+= (mn * (n-(x*(k+1))));
+        }
+ 
+        long long z = (mn * n);
+        ans = min(z,y);
+ 
+        cout<<ans<<endl;
+ 
+    }
+    return 0;
+}
